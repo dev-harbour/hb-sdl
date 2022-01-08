@@ -1,0 +1,31 @@
+# Project build file
+
+-hblib
+-inc
+
+-olib/${hb_plat}/${hb_comp}/${hb_name}
+
+-w3 -es2 -gc3
+
+-depurlbase=sdl:https://github.com/libsdl-org/SDL
+-depkeyhead=sdl:SDL.h
+-depcontrol=sdl:${HB_WITH_SDL}
+-depincpath=sdl:/usr/include/SDL2
+-depincpath=sdl:/usr/local/include/SDL2
+-depincpath=sdl:/opt/local/include/SDL2
+-depincpath=sdl:/usr/local/opt/SDL2/include
+-depimplibs=sdl:../bin/SDL2.dll
+-depimplibs=sdl:../lib/libSDL2.so
+-depimplibs=sdl:../lib/libSDL2.a
+-depimplibd=sdl:sdl
+-depfinish=sdl
+
+-iinclude
+
+-hbx=include/${hb_name}.hbx
+
+src/*.c
+src/*.prg
+
+$hb_pkg_dynlib.hbm
+$hb_pkg_install.hbm
