@@ -53,7 +53,7 @@ Downloading SDL Distributions (Mac OSX)
 
 ## Install hb-sdl
 
-- [Downloading hb-sdl](https://github.com/rjopek/hb-sdl/archive/refs/heads/master.zip)
+- [Downloading hb-sdl](https://github.com/rjopek/hb-sdl/archive/refs/heads/main.zip)
 
 Environment Variables
 
