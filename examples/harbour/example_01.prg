@@ -8,7 +8,7 @@ PROCEDURE Main()
 
    OutStd( e"Initializing SDL.\n" )
 
-   IF( SDL_Init( SDL_INIT_VIDEO + SDL_INIT_AUDIO ) != 0 )
+   IF( SDL_Init( SDL_INIT_VIDEO ) != 0 )
       OutStd( e"Unable to initialize SDL: %s.\n", SDL_GetError() )
       RETURN
    ENDIF

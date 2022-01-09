@@ -38,7 +38,7 @@ HB_FUNC( SDL_WAITEVENT )
    }
    else
    {
-      hb_ret();
+      HB_ERR_ARGS();
    }
 }
 

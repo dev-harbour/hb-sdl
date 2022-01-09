@@ -14,7 +14,7 @@ PROCEDURE Main()
       RETURN
    ENDIF
 
-   pWindow := SDL_CreateWindow( "Tutorial 3", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 380, 0 )
+   pWindow := SDL_CreateWindow( "Example 3", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 720, 450, 0 )
    IF( pWindow == NIL )
       OutStd( e"Could not create window: \n", SDL_GetError() )
       RETURN
