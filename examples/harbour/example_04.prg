@@ -33,7 +33,7 @@ PROCEDURE Main()
 
       CASE SDL_KEYDOWN
 
-         SWITCH( KeyDown() )
+         SWITCH( KeyboardEvent( EVENT_KEY_KEYSYM_SYM ) )
 
          CASE SDLK_UP
             SDL_SetWindowTitle( pWindow, "SDLK_UP" )

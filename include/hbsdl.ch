@@ -1018,4 +1018,17 @@
 #define SDL_GL_CONTEXT_RESET_LOSE_CONTEXT      0x0001
 /* End SDL_video.h */
 
+/* KeyboardEvent */
+#define EVENT_KEY_TYPE              1
+#define EVENT_KEY_TIMESTAMP         2
+#define EVENT_KEY_WINDOWID          3
+#define EVENT_KEY_STATE             4
+#define EVENT_KEY_REPEAT            5
+#define EVENT_KEY_PADDING2          6
+#define EVENT_KEY_PADDING3          7
+#define EVENT_KEY_KEYSYM_SCANCODE   8
+#define EVENT_KEY_KEYSYM_SYM        9
+#define EVENT_KEY_KEYSYM_MOD        10
+#define EVENT_KEY_KEYSYM_UNUSED     11
+
 #endif /* HBSDL_CH_ */

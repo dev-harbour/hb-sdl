@@ -11,13 +11,14 @@ PROCEDURE Main()
    LOCAL aSurface
    LOCAL pTexture
    LOCAL lQuit := .F.
+   LOCAL nEvent
 
    IF( SDL_Init( SDL_INIT_VIDEO ) != 0 )
       OutStd( e"Unable to initialize SDL: \n", SDL_GetError() )
       RETURN
    ENDIF
 
-   pWindow := SDL_CreateWindow( "Example 4", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 720, 450, 0 )
+   pWindow := SDL_CreateWindow( "Example 5", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 720, 450, 0 )
    IF( pWindow == NIL )
       OutStd( e"Could not create Window: \n", SDL_GetError() )
       RETURN
@@ -45,7 +46,9 @@ PROCEDURE Main()
 
    DO WHILE( ! lQuit )
 
-      SWITCH EventType()
+      SDL_WaitEvent( @nEvent )
+
+      SWITCH( nEvent )
 
       CASE SDL_QUIT
          lQuit := .T.
@@ -54,7 +57,7 @@ PROCEDURE Main()
       ENDSWITCH
 
       SDL_RenderClear( pRenderer )
-      SDL_RenderCopy( pRenderer, pTexture, { 0, 0, 450, 450 }, {0, 0, 450, 450 } )
+      SDL_RenderCopy( pRenderer, pTexture, { 0, 0, 450, 450 }, { 0, 0, 450, 450 } )
       SDL_RenderPresent( pRenderer )
 
    ENDDO

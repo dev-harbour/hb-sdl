@@ -10,29 +10,44 @@
 
 /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
 
-/* type EventType() */
-HB_FUNC( EVENTTYPE )
+/* KeyboardEvent */
+HB_FUNC( KEYBOARDEVENT )
 {
    SDL_Event event;
+   KeyboardEvent event_type = hb_parni( 1 );
 
    if( SDL_WaitEvent( &event ) )
    {
-      hb_retni( ( Uint32 ) event.type );
-   }
-   else
-   {
-      hb_ret();
-   }
-}
+      switch( event_type )
+      {
+      case EVENT_KEY_TYPE:
+         break;
+      case EVENT_KEY_TIMESTAMP:
+         break;
+      case EVENT_KEY_WINDOWID:
+         break;
+      case EVENT_KEY_STATE:
+         break;
+      case EVENT_KEY_REPEAT:
+         break;
+      case EVENT_KEY_PADDING2:
+         break;
+      case EVENT_KEY_PADDING3:
+         break;
+      case EVENT_KEY_KEYSYM_SCANCODE:
+         break;
+      case EVENT_KEY_KEYSYM_SYM:
+         hb_retni( event.key.keysym.sym );
+         break;
+      case EVENT_KEY_KEYSYM_MOD:
+         break;
+      case EVENT_KEY_KEYSYM_UNUSED:
+         break;
 
-/* key KeyDown() */
-HB_FUNC( KEYDOWN )
-{
-   SDL_Event event;
-
-   if( SDL_WaitEvent( &event ) )
-   {
-      hb_retni( event.key.keysym.sym );
+      default:
+         hb_ret();
+         break;
+      }
    }
    else
    {
