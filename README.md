@@ -11,7 +11,7 @@ Installing hb-sdl requires SDL including its headers. For more info see [getting
 - Build static library:
 
    ```
-   hbmk2 hbxcb.hbp
+   hbmk2 hbsdl.hbp
    ```
 
 - Build and run sample and test code:
