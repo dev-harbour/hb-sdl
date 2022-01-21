@@ -8,7 +8,7 @@
 -w3 -es2 -gc3
 
 -depurlbase=sdl:https://github.com/libsdl-org/SDL
--depkeyhead=sdl:SDL.h
+-depkeyhead=sdl:SDL2/SDL.h
 -depcontrol=sdl:${HB_WITH_SDL}
 -depincpath=sdl:/usr/include/SDL2
 -depincpath=sdl:/usr/local/include/SDL2
