@@ -517,6 +517,13 @@
 //#define SDL_mutexV(m)   SDL_UnlockMutex(m)
 /* END SDL_mutex.h */
 
+/* SDL_pixels.h */
+
+#define SDL_ALPHA_OPAQUE      255
+#define SDL_ALPHA_TRANSPARENT 0
+
+/* END SDL_pixels.h */
+
 /* SDL_render.h */
 #define SDL_RENDERER_SOFTWARE      0x00000001   /**< The renderer is a software fallback */
 #define SDL_RENDERER_ACCELERATED   0x00000002   /**< The renderer uses hardware acceleration */
