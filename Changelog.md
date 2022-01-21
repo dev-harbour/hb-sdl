@@ -4,7 +4,15 @@
 [//]: # ( Entries may not always be in chronological/commit order. )
 [//]: # ( Others according to Markdown specifications )
 
-# Changelog
+# Changelog hb-sdl
+
+## 2022-01-20
+
+   - hb-sdl/Changelog.md
+   - hb-sdl/hbsdl.hbp
+   - hb-sdl/include/hbsdl.ch
+   - hb-sdl/README.md
+   - hb-sdl/src/SDL_render.c
 
 ## 2022-01-19
 
