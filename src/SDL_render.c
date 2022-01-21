@@ -132,7 +132,7 @@ void hb_texture_Return( SDL_Texture * pSDL_Texture )
 }
 
 // extern DECLSPEC void SDLCALL SDL_DestroyTexture(SDL_Texture * texture);
-HB_FUNC( SDL_DestroyTexture )
+HB_FUNC( SDL_DESTROYTEXTURE )
 {
    SDL_Texture ** ppSDL_Texture = ( SDL_Texture ** ) hb_parptrGC( &s_gcTextureFuncs, 1 );
 
@@ -259,6 +259,23 @@ HB_FUNC( SDL_CREATETEXTUREFROMSURFACE )
 // extern DECLSPEC void SDLCALL SDL_RenderGetScale(SDL_Renderer * renderer, float *scaleX, float *scaleY);
 
 // extern DECLSPEC int SDLCALL SDL_SetRenderDrawColor(SDL_Renderer * renderer, Uint8 r, Uint8 g, Uint8 b, Uint8 a);
+HB_FUNC( SDL_SETRENDERDRAWCOLOR )
+{
+   SDL_Renderer * renderer = hb_renderer_Param( 1 );
+
+   if( renderer &&
+      hb_param( 2, HB_IT_INTEGER ) != NULL &&
+      hb_param( 3, HB_IT_INTEGER ) != NULL &&
+      hb_param( 4, HB_IT_INTEGER ) != NULL &&
+      hb_param( 5, HB_IT_INTEGER ) != NULL )
+   {
+      hb_retni( SDL_SetRenderDrawColor( renderer, ( Uint8 ) hb_parni( 2 ), ( Uint8 ) hb_parni( 3 ), ( Uint8 ) hb_parni( 4 ), ( Uint8 ) hb_parni( 5 ) ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC int SDLCALL SDL_GetRenderDrawColor(SDL_Renderer * renderer, Uint8 * r, Uint8 * g, Uint8 * b, Uint8 * a);
 
