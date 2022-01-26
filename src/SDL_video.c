@@ -439,6 +439,19 @@ HB_FUNC( SDL_SETWINDOWTITLE )
 }
 
 // extern DECLSPEC const char *SDLCALL SDL_GetWindowTitle(SDL_Window * window);
+HB_FUNC( SDL_GETWINDOWTITLE )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      hb_retc( SDL_GetWindowTitle( window ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC void SDLCALL SDL_SetWindowIcon(SDL_Window * window, SDL_Surface * icon);
 
