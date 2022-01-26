@@ -6,7 +6,7 @@
 
 PROCEDURE Main()
 
-   IF( SDL_Init( hb_bitOr( SDL_INIT_VIDEO ) != 0 )
+   IF( SDL_Init( SDL_INIT_VIDEO ) != 0 )
       OutStd( "Unable to initialize SDL: ", SDL_GetError() )
       RETURN
    ENDIF

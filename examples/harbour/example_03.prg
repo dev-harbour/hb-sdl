@@ -8,6 +8,7 @@ PROCEDURE Main()
 
    LOCAL pWindow
    LOCAL lQuit := .F.
+   LOCAL nEvent
 
    IF( SDL_Init( SDL_INIT_VIDEO ) != 0 )
       OutStd( e"Unable to initialize SDL: \n", SDL_GetError() )
@@ -22,7 +23,9 @@ PROCEDURE Main()
 
    DO WHILE( ! lQuit )
 
-      SWITCH( EventType() )
+      SDL_WaitEvent( @nEvent )
+      
+      SWITCH( nEvent )
 
       CASE SDL_QUIT
          lQuit := .T.
