@@ -460,20 +460,76 @@ HB_FUNC( SDL_GETWINDOWTITLE )
 // extern DECLSPEC void *SDLCALL SDL_GetWindowData(SDL_Window * window, const char *name);
 
 // extern DECLSPEC void SDLCALL SDL_SetWindowPosition(SDL_Window * window, int x, int y);
+HB_FUNC( SDL_SETWINDOWPOSITION )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window && hb_param( 2, HB_IT_INTEGER ) != NULL && hb_param( 3, HB_IT_INTEGER ) != NULL )
+   {
+      SDL_SetWindowPosition( window, hb_parni( 2 ), hb_parni( 3 ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+
+}
 
 // extern DECLSPEC void SDLCALL SDL_GetWindowPosition(SDL_Window * window, int *x, int *y);
 
 // extern DECLSPEC void SDLCALL SDL_SetWindowSize(SDL_Window * window, int w, int h);
+HB_FUNC( SDL_SETWINDOWSIZE )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window && hb_param( 2, HB_IT_INTEGER ) != NULL && hb_param( 3, HB_IT_INTEGER ) != NULL )
+   {
+      SDL_SetWindowSize( window, hb_parni( 2 ), hb_parni( 3 ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+
+}
 
 // extern DECLSPEC void SDLCALL SDL_GetWindowSize(SDL_Window * window, int *w, int *h);
 
 // extern DECLSPEC int SDLCALL SDL_GetWindowBordersSize(SDL_Window * window, int *top, int *left, int *bottom, int *right);
 
 // extern DECLSPEC void SDLCALL SDL_SetWindowMinimumSize(SDL_Window * window, int min_w, int min_h);
+HB_FUNC( SDL_SETWINDOWMINIMUMSIZE )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window && hb_param( 2, HB_IT_INTEGER ) != NULL && hb_param( 3, HB_IT_INTEGER ) != NULL )
+   {
+      SDL_SetWindowMinimumSize( window, hb_parni( 2 ), hb_parni( 3 ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+
+}
 
 // extern DECLSPEC void SDLCALL SDL_GetWindowMinimumSize(SDL_Window * window, int *w, int *h);
 
 // extern DECLSPEC void SDLCALL SDL_SetWindowMaximumSize(SDL_Window * window, int max_w, int max_h);
+HB_FUNC( SDL_SETWINDOWMAXIMUMSIZE )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window && hb_param( 2, HB_IT_INTEGER ) != NULL && hb_param( 3, HB_IT_INTEGER ) != NULL )
+   {
+      SDL_SetWindowMaximumSize( window, hb_parni( 2 ), hb_parni( 3 ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+
+}
 
 // extern DECLSPEC void SDLCALL SDL_GetWindowMaximumSize(SDL_Window * window, int *w, int *h);
 
@@ -484,22 +540,126 @@ HB_FUNC( SDL_GETWINDOWTITLE )
 // extern DECLSPEC void SDLCALL SDL_SetWindowAlwaysOnTop(SDL_Window * window, SDL_bool on_top);
 
 // extern DECLSPEC void SDLCALL SDL_ShowWindow(SDL_Window * window);
+HB_FUNC( SDL_SHOWWINDOW )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      SDL_ShowWindow( window );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC void SDLCALL SDL_HideWindow(SDL_Window * window);
+HB_FUNC( SDL_HIDEWINDOW )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      SDL_HideWindow( window );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC void SDLCALL SDL_RaiseWindow(SDL_Window * window);
+HB_FUNC( SDL_RAISEWINDOW )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      SDL_RaiseWindow( window );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC void SDLCALL SDL_MaximizeWindow(SDL_Window * window);
+HB_FUNC( SDL_MAXIMIZEWINDOW )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      SDL_MaximizeWindow( window );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC void SDLCALL SDL_MinimizeWindow(SDL_Window * window);
+HB_FUNC( SDL_MINIMIZEWINDOW )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      SDL_MinimizeWindow( window );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC void SDLCALL SDL_RestoreWindow(SDL_Window * window);
+HB_FUNC( SDL_RESTOREWINDOW )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      SDL_RestoreWindow( window );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC int SDLCALL SDL_SetWindowFullscreen(SDL_Window * window, Uint32 flags);
 
 // extern DECLSPEC SDL_Surface * SDLCALL SDL_GetWindowSurface(SDL_Window * window);
+HB_FUNC( SDL_GETWINDOWSURFACE )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      hb_surface_Return( SDL_GetWindowSurface( window ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC int SDLCALL SDL_UpdateWindowSurface(SDL_Window * window);
+HB_FUNC( SDL_UPDATEWINDOWSURFACE )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      hb_retni( SDL_UpdateWindowSurface( window ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC int SDLCALL SDL_UpdateWindowSurfaceRects(SDL_Window * window, const SDL_Rect * rects, int numrects);
 
@@ -516,18 +676,101 @@ HB_FUNC( SDL_GETWINDOWTITLE )
 // extern DECLSPEC SDL_bool SDLCALL SDL_GetWindowMouseGrab(SDL_Window * window);
 
 // extern DECLSPEC SDL_Window * SDLCALL SDL_GetGrabbedWindow(void);
+HB_FUNC( SDL_GETGRABBEDWINDOW )
+{
+   hb_window_Return( SDL_GetGrabbedWindow() );
+}
 
 // extern DECLSPEC int SDLCALL SDL_SetWindowBrightness(SDL_Window * window, float brightness);
+HB_FUNC( SDL_SETWINDOWBRIGHTNESS )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window && hb_param( 2, HB_IT_NUMERIC ) != NULL )
+   {
+      hb_retni( SDL_SetWindowBrightness( window, ( float ) hb_parnl( 2 ) ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC float SDLCALL SDL_GetWindowBrightness(SDL_Window * window);
+HB_FUNC( SDL_GETWINDOWBRIGHTNESS )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      hb_retnl( SDL_GetWindowBrightness( window ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC int SDLCALL SDL_SetWindowOpacity(SDL_Window * window, float opacity);
+HB_FUNC( SDL_SETWINDOWOPACITY )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window && hb_param( 2, HB_IT_NUMERIC ) != NULL )
+   {
+      hb_retni( SDL_SetWindowOpacity( window, ( float ) hb_parnl( 2 ) ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC int SDLCALL SDL_GetWindowOpacity(SDL_Window * window, float * out_opacity);
+HB_FUNC( SDL_GETWINDOWOPACITY )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window && hb_param( 2, HB_IT_NUMERIC ) != NULL )
+   {
+      hb_retni( SDL_GetWindowOpacity( window, ( float * ) hb_parnl( 2 ) ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC int SDLCALL SDL_SetWindowModalFor(SDL_Window * modal_window, SDL_Window * parent_window);
+HB_FUNC( SDL_SETWINDOWMODALFOR )
+{
+   SDL_Window * modal_window = hb_window_Param( 1 );
+   SDL_Window * parent_window = hb_window_Param( 2 );
+
+   if( modal_window && parent_window )
+   {
+      hb_retni( SDL_SetWindowModalFor( modal_window, parent_window ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC int SDLCALL SDL_SetWindowInputFocus(SDL_Window * window);
+HB_FUNC( SDL_SETWINDOWINPUTFOCUS )
+{
+   SDL_Window * window = hb_window_Param( 1 );
+
+   if( window )
+   {
+      hb_retni( SDL_SetWindowInputFocus( window ) );
+   }
+   else
+   {
+      HB_ERR_ARGS();
+   }
+}
 
 // extern DECLSPEC int SDLCALL SDL_SetWindowGammaRamp(SDL_Window * window, const Uint16 * red, const Uint16 * green, const Uint16 * blue);
 
@@ -542,8 +785,16 @@ HB_FUNC( SDL_GETWINDOWTITLE )
 // extern DECLSPEC SDL_bool SDLCALL SDL_IsScreenSaverEnabled(void);
 
 // extern DECLSPEC void SDLCALL SDL_EnableScreenSaver(void);
+HB_FUNC( SDL_ENABLESCREENSAVER )
+{
+   SDL_EnableScreenSaver();
+}
 
 // extern DECLSPEC void SDLCALL SDL_DisableScreenSaver(void);
+HB_FUNC( SDL_DISABLESCREENSAVER )
+{
+   SDL_DisableScreenSaver();
+}
 
 // extern DECLSPEC int SDLCALL SDL_GL_LoadLibrary(const char *path);
 

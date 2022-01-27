@@ -6,6 +6,35 @@
 
 # Changelog hb-sdl
 
+## 2022-01-27
+
+### Update
+   - hb-sdl/src/SDL_video.c
+
+### Changed
+   - SDL_GetWindowTitle()
+   - SDL_SetWindowPosition()
+   - SDL_SetWindowSize()
+   - SDL_SetWindowMinimumSize()
+   - SDL_SetWindowMaximumSize()
+   - SDL_ShowWindow()
+   - SDL_HideWindow()
+   - SDL_RaiseWindow()
+   - SDL_MaximizeWindow()
+   - SDL_MinimizeWindow()
+   - SDL_RestoreWindow()
+   - SDL_GetWindowSurface()
+   - SDL_UpdateWindowSurface()
+   - SDL_GetGrabbedWindow()
+   - SDL_SetWindowBrightness()
+   - SDL_GetWindowBrightness()
+   - SDL_SetWindowOpacity()
+   - SDL_GetWindowOpacity()
+   - SDL_SetWindowModalFor()
+   - SDL_SetWindowInputFocus()
+   - SDL_EnableScreenSaver()
+   - SDL_DisableScreenSaver()
+
 ## 2022-01-20
 
    - hb-sdl/Changelog.md
